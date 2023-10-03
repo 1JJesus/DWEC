@@ -1,0 +1,34 @@
+    console.log("hola mundo");//mensaje general
+    console.info('esto es un mensaje')
+    console.warn('cuidado con lo que tocas')	
+	console.error('la cagaste')	
+    alert('mensaje de alerta')
+    confirm('confirmacion')
+    prompt('mensaje')
+
+    //Variables
+    var num=5;              //variable tradicional y es visible en todo el script (global)
+    let numero=8;           //variable accesible a su scope
+    const pi=3.13;   //constante accesible a su scope
+
+
+
+    /*
+    Number: Numero
+    String: Cadena
+    Boolean: Verdadero falso
+    NaN: Not a Number
+    Undefined: Sin definir
+    Null: Nulo
+    */
+    /*
+    + - * /
+    */
+    /*
+    Operadores comparacion
+
+    <> 
+    <= >=
+    == !=
+    === !== igual o no al valor y tipo
+    */

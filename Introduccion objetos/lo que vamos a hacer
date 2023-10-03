@@ -1,0 +1,72 @@
+Objetos nativos en java
+
+Para instanciar un nuevo objeto se utiliza la palabra clave new
+
+Para acceder a las propiedades y metodos de los objetos sse hace con el operador "."
+
+Los objetos nativos de JS se ordenan de forma jerarquica
+
+Objeto date:
+    Para trabajar fecha y hora
+    Almacena numero de milisegundos desde 0 1 enero 1970
+    el constructor date es:
+        new Date()
+        new Date(milisegundos)
+        new Date(cadeenaFecha)
+
+        Si no proporciona aargumentos, el constructor crea un objeto con la fecha y hora del sistema lcal.
+
+Objeto math
+    Permite realizar operaciones matematicas complejas en JS.
+
+Objeto number
+    Permite realizar operaciones xcon ripo de datos numerico.
+
+Objeto String
+    Permite manejar cadenas de texto
+
+Interacion de objetos con el navegacion
+    Permiten manipular caracteristicas del navegador.
+        navigator
+        screen
+        windows
+        Document
+    El objeto navegador
+        Permite identificar caracteristicas de la plataforma sobrre la cual se ejecutan la aplicaciopn web,
+            Tipo navegador
+            version navegador
+            sistema operativo
+            geolocalizacion del dispositivo
+    objeto window
+        Se considera el objeto mas importante de JS.
+        Permite gestionar las ventanas del navegador. 
+        Es un objeto implicito con lo cual no es necesario nombrarlo 
+        para acceder a los objetos que se encuentren debajo de su nivel de jerarquia
+    
+    Objeto Document
+        Se refiere al contenido de la pagina web que esta cargando en el navegador.
+        Desde el podemos acceder y manipular todos los elementos de DOM.
+    
+    Objeto History
+        Almacena referencias a las paginas web visitadas.
+        las referencias se guardan en una lista utilizada principalmente para desplazarse entre dichas web
+    
+    Objeto location
+        Corresponde a la URL. Su funcion principal es consultar diferentes partes que forman una url como el 
+        dominio, protocolo, etc.
+
+    generacion elementos html desde el codigo
+        Principal objetivo de JS es convertir documento html estatico en una aplicacion web dinamica.
+        Ejemplo ejecutar instrucciones que crean nuevas ventanas con contenido propio,
+        en lugar de mostrar dicho contenido en la ventana activa.
+    
+    Crear nuevo elemento html
+        Podemos cfrear un nuevo elemento escribiendo directamente codigo html en el documento
+        Tambien podemos crear contenido en ventanas emergentes
+
+    Generar nuevo elemento con funciones document
+        Podemos utilizar las siguientes funciones del objeto global document para crear nuevos elementos e insertarlos 
+        dentro de otros elementos:
+            Documentcreate.createElement(tagname.[options])
+            DocumentCreate.createTextNode(text)
+            Elemento.appenChild(ElementoHijo)
