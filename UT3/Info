@@ -1,0 +1,29 @@
+Funciones, array y objetos definidos por el usuario
+
+    Funciones predefinidas del lenguaje
+
+        JS cuenta con funciones integradas
+
+
+        Pila
+        Es una estructura de datos (se puede implementar con array, lista, punteros...)
+        JS se implementa con array.
+        funciona como pila de platos.
+        apilar(1) Apila 1
+        apilar(7) Apila el 7 encima del 1
+        etc.
+        Puede crecer tanto como desees.
+        La cima de la pila es el ultimo elemento apilado.
+        Si desapilar, hay que desapilar en orden por arriba.
+        Ej 7
+            8
+            9
+            5
+            1
+            2
+        Al desapilar sacaria el 8
+        si desapoilar otra vez, el 9
+        otra vez 5, etc.
+    
+    Cola
+        

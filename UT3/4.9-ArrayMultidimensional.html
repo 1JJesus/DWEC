@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funcion Eval</title>
+</head>
+<body>
+   
+    <script type="text/javascript">
+    // Crear arrays con palabras clave en diferentes idiomas
+    let palabras_spain = new Array("facebook", "tuenti", "youtube", "hotmail", "marca");
+    let palabras_swisland = new Array("facebook", "youtube", "hotmail", "google", "blick");
+    let palabras_portugues = new Array("facebook", "youtube", "hotmail", "jogos", "download");
+
+    // Crear un array que contenga los arrays de palabras clave
+    let palabras_mas_buscadas = new Array(palabras_spain, palabras_portugues, palabras_swisland);
+
+    // Iniciar la tabla en el documento HTML
+    document.write("<table border=2>");
+
+    // Recorrer los arrays en 'palabras_mas_buscadas'
+    for (i = 0; i < palabras_mas_buscadas.length; i++) {
+        document.write("<tr>");
+        document.write("<td><b>Estado " + i + "</b></td>");
+
+        // Aquí hay un error: "index" debería ser "i" en el bucle for interno
+        for (j = 0; j < palabras_mas_buscadas[i].length; j++) {
+            // Aquí había un error de etiqueta de cierre ("/td" en lugar de "</td>")
+            document.write("<td>" + palabras_mas_buscadas[i][j] + "</td>");
+        }
+
+        document.write("</tr>");
+    }
+
+    // Cerrar la tabla en el documento HTML
+    document.write("</table>");
+</script>
+
+</body>
+</html>

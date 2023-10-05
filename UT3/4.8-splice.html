@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funcion Eval</title>
+</head>
+
+<body>
+
+    <script type="text/javascript">
+        // Crear un array llamado 'coches' con tres elementos
+    let coches = new Array("Ferrari", "BMW", "Dacia");
+    // Las posiciones son: 0, 1, 2
+
+    // Utilizar el método 'splice' para modificar el array 'coches'
+    // - Comenzar en la posición 2 (índice 2)
+    // - Eliminar 1 elemento ("Dacia")
+    // - Insertar "Audi" en esa posición
+    coches.splice(2, 1, "Audi");
+
+    // Escribir el array 'coches' en el documento
+    document.write(coches+"<br>");
+
+    // Crear un array llamado 'miPeces' con cuatro elementos
+    let miPeces = new Array("Angel", "Payaso", "Trompeta", "Marrposa");
+    // Aquí hay un error, 'array' debería ser 'Array' (mayúscula inicial)
+
+    // Utilizar el método 'splice' para modificar el array 'miPeces'
+    // - Comenzar en la posición 0 (el inicio del array)
+    // - Eliminar 2 elementos ("Angel" y "Payaso")
+    // - Insertar "papagayo," "anemona," y "azul" al principio del array
+    let removes = miPeces.splice(0, 2, "papagayo", "anemona", "azul");
+
+    // Escribir el array 'miPeces' en el documento
+    document.write(miPeces);
+
+
+    </script> <!-- Siempre al final del body -->
+</body>
+
+</html>

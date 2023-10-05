@@ -1,0 +1,22 @@
+<!-- aplicar iva del dato introducido por el usuario -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funcion Eval</title>
+</head>
+<body>
+   
+    <script type="text/javascript">
+        let input = prompt("Introduce un valor para sacar iva");
+        //let inputParsed=parseInt(input);
+        //alert("parseInt("+input+")"+inputParsed);
+        //input=prompt("Introduce un nuevo valor: ");
+        inputParsed=parseFloat(input);
+        inputParsed=inputParsed*1.21;
+        //alert("parseFloat("+input+")"+inputParsed);
+        alert("El precio con IVA es : "+inputParsed+"€");
+    </script> <!-- Siempre al final del body -->
+</body>
+</html>

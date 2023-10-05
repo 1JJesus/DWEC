@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        //No se pueden repetir datos
+        const miSet=new Set([34,"dk",true,""])
+
+        const miSet1=new Set()
+        miSet1.add(1);
+        miSet1.add(5);
+        miSet1.add(5);
+        miSet1.add(7);
+        miSet1.add("Solo debe aparecer el 1,5,7,y este texto");
+        const objeto={a:"hola",b:12};
+        miSet1.add(objeto)
+        //miSet1.add({a:"texto",b=28})
+        
+        miSet1.has(1)
+        miSet1.has(Math.sqrt(25))
+        miSet1.has(objeto)
+        miSet1.size;
+        miSet1.delete(objeto)//bora objeto o lo que contenga
+
+
+        console.log(miSet1)
+
+
+        //Iteracion sobre conjuntos
+
+        for (let item of miSet1) {
+            console.log(item)
+            
+        }
+
+        for(let item of miSet1.values()){//tiene efecto en los map
+            console.log(item)
+        }
+        
+        const miArray=Array.from(miSet1)// convertirlo en array para usar index
+
+        for(let item of miArray){//tiene efecto en los map
+            console.log(item)
+        }
+
+        miSet1.add(document.body)
+        miSet1.has(document.querySelector('body'))
+
+
+
+    </script>
+</body>
+</html>
