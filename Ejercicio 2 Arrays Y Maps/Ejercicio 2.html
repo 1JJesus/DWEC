@@ -68,12 +68,27 @@
 }
 
 // Ejemplo de uso de la clase Persona
-const persona1 = new Persona("aaaa", "AAAA", "Ciudad A", 30, "E.A", true);
+/*const persona1 = new Persona("aaaa", "AAAA", "Ciudad A", 30, "E.A", true);
 console.log(persona1);
 
-// Intentar crear una persona con datos incorrectos (provocará alertas)
+// Intentar crear una con datos incorrectos para mostrar alertas
 const persona2 = new Persona("bbbb", "BBBB", "Ciudad B", 5, "1", false);
-console.log(persona2); // Mostrará las alertas en la consola
+console.log(persona2); 
+*/
+const personas = [
+    new Persona("aaaa", "AAAA", "Ciudad A", 11, "Sin estudios", true),
+    new Persona("bbbb", "BBBB", "Ciudad B", 22, "Con estudios", true),
+    new Persona("cccc", "CCCC", "Ciudad C", "33", "Con mucho tiempo", true), // Genera una alerta de validación
+    new Persona("dddd", "DDDD", "Ciudad D", 44, "estudiameesta", true),
+];
+
+// Filtrar objetos Persona con valores válidos
+const personasValidas = personas.filter((persona) => {
+    return persona.nombre !== undefined && persona.apellidos !== undefined 
+    && persona.poblacion !== undefined && persona.edad !== undefined 
+    && persona.estudios !== undefined && persona.carnetConducir;
+});
+
 
     </script>
 </body>
