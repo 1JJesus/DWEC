@@ -9,13 +9,13 @@
     
     <script>
         class Persona {
-    constructor(nombre, apellidos, poblacion, edad, estudios, carnetConducir) {
-        this.nombre = nombre;
-        this.apellidos = apellidos;
-        this.poblacion = poblacion;
+    constructor(nombre, apellidos, poblacion, edad, estudios, carnetConducir) {// recordar _ y # sirven para privado
+        this.nombre = this.validarString(nombre);
+        this.apellidos = this.validarString(apellidos);
+        this.poblacion = this.validarString(poblacion);
         this._edad = this.validarEdad(edad);
-        this._estudios = this.validarEstudios(estudios);
-        this.carnetConducir = carnetConducir;
+        this._estudios = this.validarString(estudios);
+        this.carnetConducir = this.validarBoolean;
     }
 
     // Getter y setter para el atributo privado "edad"
@@ -47,11 +47,21 @@
     }
 
     // Método  validar los estudios
-    validarEstudios(estudios) {
-        if (typeof estudios === 'string' && estudios.trim() !== '') {
-            return estudios;
+    validarString(string) {
+        if (typeof string === 'string' && string.trim() !== '') {
+            return string;
         } else {
-            alert('Los estudios deben ser una cadena de texto válida.');
+            alert('La celda debe ser una cadena de texto válida y no estar en blanco.');
+            return undefined;
+        }
+    }
+
+    // Método  validar los booleano
+    validarBoolean(Boolean) {
+        if (typeof boolean === 'boolean') {
+            return boolean;
+        } else {
+            alert('La celda debe ser un booleano.');
             return undefined;
         }
     }
@@ -62,7 +72,7 @@ const persona1 = new Persona("aaaa", "AAAA", "Ciudad A", 30, "E.A", true);
 console.log(persona1);
 
 // Intentar crear una persona con datos incorrectos (provocará alertas)
-const persona2 = new Persona("bbbb", "BBBB", "Ciudad B", "Veinte", "", false);
+const persona2 = new Persona("bbbb", "BBBB", "Ciudad B", 5, "1", false);
 console.log(persona2); // Mostrará las alertas en la consola
 
     </script>
