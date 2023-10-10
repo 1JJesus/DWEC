@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    
+    <script>
+        // Introducir valor 
+
+    let num = prompt("Introduce valor máximo");
+
+    // Definicion de la función 
+    const numeroAleatorio = (num) => {
+        return Math.round(Math.random() * num);
+    };
+
+    /*  // Llamada a la funcion
+    const result = numeroAleatorio(num);
+
+    // Mostrar el resultado en  alert
+    alert(`El resultado es: ${result}`);
+    */
+
+     // Array para almacenar los valores
+     const premios = [];
+
+    // Generar 10 valores con la funcion num... y guardarlos en array
+    for (let i = 0; i < 10; i++) {
+        premios.push(numeroAleatorio(num)); // Rango de premios hasta 100,000
+    }
+
+    // Recorrer el array mostrarlos con document.etc
+    let indice=1
+    
+    premios.forEach((premio, indice) => {
+        const texto = `Premio ${indice}: ${premio}`;
+        const Premios = `
+            <div>
+                <table border="1">
+                        <th>
+                ${texto}
+                        </th>
+                </table)
+            </div>
+        `;
+        document.write(Premios);
+});
+</script>
+
+
+</body>
+</html>

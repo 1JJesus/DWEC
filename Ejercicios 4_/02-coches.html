@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="contenedor"></div>
+
+
+    <script>
+    class Coche {
+        constructor(marca, modelo, precio, añomatriculacion, url) {
+        this._marca = marca;
+        this._modelo = modelo;
+        this._precio = precio;
+        this._añomatriculacion = añomatriculacion;
+        this._url = url;
+        }
+
+        get marca() {
+        return this._marca;
+        }
+        get modelo() {
+        return this._modelo;
+        }
+        get precio() {
+        return this._precio;
+        }
+        get añomatriculacion() {
+        return this._añomatriculacion;
+        }
+        get url() {
+        return this._url;
+        }
+    }
+
+    const c1 = new Coche("coche1", "modelo1", "1000", "2001", "img/1.jpg");
+    const c2 = new Coche("coche2", "modelo2", "2000", "2002", "img/2.jpg");
+    const c3 = new Coche("coche3", "modelo3", "3000", "2003", "img/3.jpg");
+    const c4 = new Coche("coche4", "modelo4", "4000", "2004", "img/4.jpg");
+    const c5 = new Coche("coche5", "modelo5", "5000", "2005", "img/5.jpg");
+    
+    //  Crear un array para almacenar las instancias de Persona
+  const coches = [];
+  
+  // Agregar las instancias de Persona al array
+  coches.push(c1,c2,c3,c4,c5);
+
+  console.log(coches)
+
+
+
+  const pintaCoches = (coches) => {
+    // Obtener el elemento contenedor donde se agregarán las tarjetas
+    const contenedor = document.getElementById("contenedor");
+
+    // Crear un objeto para construir las tarjetas ****Revisar Fragments
+    const tarjeta = document.createDocumentFragment();
+
+    coches.forEach((coche) => {
+        const card = document.createElement("div");
+        card.innerHTML = `
+            <div class="tarjetascoches">
+                <h5 class="titulotarjeta">${coche.marca} ${coche.modelo}</h5>
+                <p class="PrecioTarjeta">Precio: $${coche.precio}</p>
+                <p class="FEchaTarjeta">Año de Matriculación: ${coche.añomatriculacion}</p>
+                <img src="${coche.url}" class="imagentarjeta" alt="${coche.marca} ${coche.modelo}">
+            </div>
+        `;
+
+        // Agregar la tarjeta al fragmento
+        tarjeta.appendChild(card);
+    });
+
+    // Limpiar el contenido anterior y agregar el fragmento al contenedor
+    contenedor.innerHTML = "";
+    contenedor.appendChild(tarjeta);
+};
+
+    // Llamar a la función pintaCoches pasando el array de coches como parámetro
+    pintaCoches(coches);
+
+
+
+
+
+  /*const pintaCoches = (coches) => {
+    const texto1 = `
+        <div>
+            <table border="1">
+                <tr>
+                    <th>Marca</th>
+                    <th>Modelo</th>
+                    <th>Precio</th>
+                    <th>Año Matriculación</th>
+                    <th>URL</th>
+                </tr>
+    `;
+
+    document.write(texto1);
+
+    coches.forEach((coche) => {
+        const texto2 = `
+            <tr>
+                <td>${coche.marca}</td>
+                <td>${coche.modelo}</td>
+                <td>${coche.precio}</td>
+                <td>${coche.añomatriculacion}</td>
+                <td><img src="${coche.url}" class="imagen" alt="${coche.marca}</img></td>
+            </tr>
+        `;
+        document.write(texto2);
+    });
+
+    const texto3 = `
+            </table>
+        </div>
+    `;
+
+    document.write(texto3);
+};
+
+pintaCoches(coches);
+    */
+</script>
+</body>
+</html>

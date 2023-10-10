@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        class Persona {
+    constructor(nombre, apellidos, poblacion, edad, estudios, carnetConducir) {
+        this.nombre = nombre;
+        this.apellidos = apellidos;
+        this.poblacion = poblacion;
+        this._edad = this.validarEdad(edad);
+        this._estudios = this.validarEstudios(estudios);
+        this.carnetConducir = carnetConducir;
+    }
+
+    // Getter y setter para el atributo privado "edad"
+    get edad() {
+        return this._edad;
+    }
+
+    set edad(nuevaEdad) {
+        this._edad = this.validarEdad(nuevaEdad);
+    }
+
+    // Getter y setter para el atributo privado "estudios"
+    get estudios() {
+        return this._estudios;
+    }
+
+    set estudios(nuevosEstudios) {
+        this._estudios = this.validarEstudios(nuevosEstudios);
+    }
+
+    // Método para validar la edad
+    validarEdad(edad) {
+        if (typeof edad === 'number' && edad >= 0) {
+            return edad;
+        } else {
+            alert('La edad debe ser un número y >= 0.');
+            return undefined;
+        }
+    }
+
+    // Método  validar los estudios
+    validarEstudios(estudios) {
+        if (typeof estudios === 'string' && estudios.trim() !== '') {
+            return estudios;
+        } else {
+            alert('Los estudios deben ser una cadena de texto válida.');
+            return undefined;
+        }
+    }
+}
+
+// Ejemplo de uso de la clase Persona
+const persona1 = new Persona("aaaa", "AAAA", "Ciudad A", 30, "E.A", true);
+console.log(persona1);
+
+// Intentar crear una persona con datos incorrectos (provocará alertas)
+const persona2 = new Persona("bbbb", "BBBB", "Ciudad B", "Veinte", "", false);
+console.log(persona2); // Mostrará las alertas en la consola
+
+    </script>
+</body>
+</html>

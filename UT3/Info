@@ -27,3 +27,18 @@ Funciones, array y objetos definidos por el usuario
     
     Cola
         
+
+
+        // Función flecha sin parámetros
+        const saludar = () => "¡Hola, mundo!";
+
+        // Función flecha con un parámetro
+        const cuadrado = (x) => x * x;
+
+        // Función flecha con múltiples parámetros
+        const suma = (a, b) => a + b;
+
+    Paso parametros por vslor o referencia
+
+
+    Repasar generadores
