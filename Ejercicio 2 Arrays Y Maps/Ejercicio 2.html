@@ -9,7 +9,7 @@
     
     <script>
         class Persona {
-    constructor(nombre, apellidos, poblacion, edad, estudios, carnetConducir) {// recordar _ y # sirven para privado
+    constructor(nombre, apellidos, poblacion, edad, estudios, carnetConducir) {// recordar "_" y "#" sirven para privado
         this.nombre = this.validarString(nombre);
         this.apellidos = this.validarString(apellidos);
         this.poblacion = this.validarString(poblacion);
@@ -18,7 +18,7 @@
         this.carnetConducir = this.validarBoolean;
     }
 
-    // Getter y setter para el atributo privado "edad"
+    // Getter y setter 
     get edad() {
         return this._edad;
     }
@@ -27,7 +27,6 @@
         this._edad = this.validarEdad(nuevaEdad);
     }
 
-    // Getter y setter para el atributo privado "estudios"
     get estudios() {
         return this._estudios;
     }
@@ -46,7 +45,7 @@
         }
     }
 
-    // Método  validar los estudios
+    // Método para validar los estudios
     validarString(string) {
         if (typeof string === 'string' && string.trim() !== '') {
             return string;
@@ -56,7 +55,7 @@
         }
     }
 
-    // Método  validar los booleano
+    // Método validar los booleano
     validarBoolean(Boolean) {
         if (typeof boolean === 'boolean') {
             return boolean;
@@ -78,17 +77,36 @@ console.log(persona2);
 const personas = [
     new Persona("aaaa", "AAAA", "Ciudad A", 11, "Sin estudios", true),
     new Persona("bbbb", "BBBB", "Ciudad B", 22, "Con estudios", true),
-    new Persona("cccc", "CCCC", "Ciudad C", "33", "Con mucho tiempo", true), // Genera una alerta de validación
+    new Persona("cccc", "CCCC", "Ciudad C", "33", "Con mucho tiempo", true), // Genera una alerta de validación en edad
     new Persona("dddd", "DDDD", "Ciudad D", 44, "estudiameesta", true),
 ];
 
-// Filtrar objetos Persona con valores válidos
+// Filtrar objetos Persona con valores válidos. Puede ser util. Se aprovecha del undefined dal verificador
 const personasValidas = personas.filter((persona) => {
     return persona.nombre !== undefined && persona.apellidos !== undefined 
     && persona.poblacion !== undefined && persona.edad !== undefined 
-    && persona.estudios !== undefined && persona.carnetConducir;
+    && persona.estudios !== undefined && persona.carnetConducir !== undefined;
 });
 
+// Ordenar personas por nombre
+personasValidas.sort((a, b) => a.nombre.localeCompare(b.nombre));
+
+// Crear una tabla para mostrar las personas
+const tabla = document.createElement("table");
+const encabezado = tabla.createTHead();
+const filaEncabezado = encabezado.insertRow();
+filaEncabezado.innerHTML = "<th>Nombre</th><th>Apellidos</th><th>Población</th><th>Edad</th><th>Estudios</th>";
+
+const cuerpoTabla = tabla.createTBody();
+
+personasValidas.forEach((persona) => {
+    const fila = cuerpoTabla.insertRow();
+    fila.innerHTML = `<td>${persona.nombre}</td><td>${persona.apellidos}</td><td>${persona.poblacion}</td><td>${persona.edad}</td><td>${persona.estudios}</td>`;
+});
+
+// Agregar la tabla a la página
+document.body.appendChild(tabla);
+</script>
 
     </script>
 </body>
