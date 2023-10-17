@@ -1,0 +1,56 @@
+Manejo de eventos
+    modelos de gestion de eventos
+        Los eventos son mecanismos qie se accionan cuando ael usuario realiza un cambio sobre una pagina.
+        El encargado de crear la jerarqia de objetos que compone una pagina web es el DOM (Document Object Model)
+        DOM SE ENCARGA DE LOS eventos
+    
+    Asignar manejador a un eventos
+        Para poder controlar uin evento se necesita un manejador
+        El manejador palabra reservada .
+        En caso "click" del raton manejador seria onclick.
+        Se puede asignar codigo directamente.
+
+        Lo que haremos sera asignar un evento mediante el metodo addEventListener.
+        ejemplo boton.addEventListener("click", function (event) {
+            console.log...
+        })
+
+        Cuando el evento va en html, el evento comienza en "on" onclick.
+        en js es addEventListener.
+
+    Tipos de evento
+        Eventos de raton, teclado, HTML, DOM.
+    
+    Eventos raton
+        click
+        dblclick
+        etc.
+
+    Eventos teclado
+        keydown
+        keyup
+
+    Eventos html
+        load
+        unload
+        abort
+        error
+        select
+        change
+        submit
+        reset
+        resize
+        scroll
+        focus
+        blur
+    
+    Eventos DOM
+        DOMContentLoad
+        DOMSubtreeModified
+        DOMNodeInserted
+        DOMNodeRemoved
+        DOMNodeRemovedFromDocument
+        DOMNodeInsertedFromDocument
+
+Formularios
+    

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="parrafo">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        Reiciendis molestiae magnam hic soluta repudiandae dolorum, 
+        natus placeat optio ullam mollitia nemo voluptate possimus. 
+        Quisquam laborum consectetur est, corrupti aspernatur delectus.
+    </div>
+    <div class="parrafo">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        Reiciendis molestiae magnam hic soluta repudiandae dolorum, 
+        natus placeat optio ullam mollitia nemo voluptate possimus. 
+        Quisquam laborum consectetur est, corrupti aspernatur delectus.
+    </div>
+    <div class="parrafo">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        Reiciendis molestiae magnam hic soluta repudiandae dolorum, 
+        natus placeat optio ullam mollitia nemo voluptate possimus. 
+        Quisquam laborum consectetur est, corrupti aspernatur delectus.
+    </div>
+    <div class="parrafo">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        Reiciendis molestiae magnam hic soluta repudiandae dolorum, 
+        natus placeat optio ullam mollitia nemo voluptate possimus. 
+        Quisquam laborum consectetur est, corrupti aspernatur delectus.
+    </div>
+    <div class="parrafo">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        Reiciendis molestiae magnam hic soluta repudiandae dolorum, 
+        natus placeat optio ullam mollitia nemo voluptate possimus. 
+        Quisquam laborum consectetur est, corrupti aspernatur delectus.
+    </div>
+    <script>
+        // Asignamos manejador de eventos a varios elementos del DOM
+
+        const divs = document.querySelectorAll(".parrafo");
+
+        const aleatorio = max => {
+            return Math.round(Math.random() * max);
+        };
+
+        const cambiarColor = function(e) {
+            const color = new Array(aleatorio(255), aleatorio(255), aleatorio(255)); // Corrección de corchetes
+            e.target.style.backgroundColor = `rgb(${color[0]}, ${color[1]}, ${color[2]})`;
+        }
+
+        divs.forEach(div => {
+            div.addEventListener("mouseover", cambiarColor);
+        });
+    </script>
+</body>
+</html>
